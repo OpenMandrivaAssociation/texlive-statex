@@ -45,6 +45,7 @@ version of the package is available: statex2.
 %{_texmfdistdir}/tex/latex/statex/statex.sty
 %doc %{_texmfdistdir}/doc/latex/statex/statex-example.pdf
 %doc %{_texmfdistdir}/doc/latex/statex/statex-example.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -55,3 +56,5 @@ version of the package is available: statex2.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
