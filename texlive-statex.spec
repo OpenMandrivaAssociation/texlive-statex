@@ -6,7 +6,7 @@
 # catalog-version 1.6
 Name:		texlive-statex
 Version:	1.6
-Release:	1
+Release:	2
 Summary:	Statistics style
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/statex
