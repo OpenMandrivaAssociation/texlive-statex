@@ -3,7 +3,7 @@ Version:	20306
 Release:	2
 Summary:	Statistics style
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/statex
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/statex
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/statex.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/statex.doc.r%{version}.tar.xz
