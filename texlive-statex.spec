@@ -1,42 +1,22 @@
-Name:		texlive-statex
-Version:	20306
-Release:	2
+%global tl_name statex
+%global tl_revision 79618
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.6
+Release:	%{tl_revision}.1
 Summary:	Statistics style
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/statex
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/statex.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/statex.doc.r%{version}.tar.xz
+License:	lppl1.2
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/statex.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/statex.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-A package defining many macros for items of significance in
-statistical presentations. An updated, but incompatible,
-version of the package is available: statex2.
+A package defining many macros for items of significance in statistical
+presentations. An updated, but incompatible, version of the package is
+available: statex2.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/statex/statex.sty
-%doc %{_texmfdistdir}/doc/latex/statex/statex-example.pdf
-%doc %{_texmfdistdir}/doc/latex/statex/statex-example.tex
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
